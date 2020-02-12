@@ -1,0 +1,8 @@
+apiVersion: core.oam.dev/v1alpha1
+kind: ApplicationConfiguration
+metadata:
+  name: greeter-app-config
+spec:
+  components:
+    - componentName: greeter-component
+      instanceName: greeter-app

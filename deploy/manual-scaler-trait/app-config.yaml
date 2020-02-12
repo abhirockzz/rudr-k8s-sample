@@ -1,0 +1,15 @@
+apiVersion: core.oam.dev/v1alpha1
+kind: ApplicationConfiguration
+metadata:
+  name: greeter-app-config-3
+spec:
+  components:
+    - componentName: greeter-component
+      instanceName: scalable-greeter-app
+      parameterValues:
+        - name: greeting
+          value: scalable
+      traits:
+        - name: manual-scaler
+          properties:
+            replicaCount: 2

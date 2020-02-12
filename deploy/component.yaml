@@ -1,0 +1,25 @@
+apiVersion: core.oam.dev/v1alpha1
+kind: ComponentSchematic
+metadata:
+  name: greeter-component
+spec:
+  workloadType: core.oam.dev/v1alpha1.Server
+  containers:
+    - name: greeter
+      image: abhirockzz/greeter-go
+      env:
+        - name: GREETING
+          fromParam: greeting
+      ports:
+        - protocol: TCP
+          containerPort: 8080
+          name: http
+      resources:
+        cpu:
+          required: 0.05
+        memory:
+          required: "128"
+  parameters:
+    - name: greeting
+      type: string
+      default: abhi_tweeter

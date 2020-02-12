@@ -1,0 +1,11 @@
+apiVersion: core.oam.dev/v1alpha1
+kind: ApplicationConfiguration
+metadata:
+  name: greeter-app-config-2
+spec:
+  components:
+    - componentName: greeter-component
+      instanceName: greeter-app-2
+      parameterValues:
+        - name: greeting
+          value: foobar
